@@ -20,4 +20,8 @@ router.get("/", function(req, res) {
     .finally(() => client.close());
 });
 
+router.get("/collections/:id", function(req,res) {
+  const params = req.params
+});
+
 module.exports = router;

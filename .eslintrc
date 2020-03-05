@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "indent": ["warn", 2, { "SwitchCase": 1 }],
+    // Me saca error en un archivo cuando pongo UNIX, si pongo windows me saca error en otro archivo "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-console": "warn",
+    "no-var": "error",
+    "no-undef": 0
+  }
+}

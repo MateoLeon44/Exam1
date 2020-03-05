@@ -17,20 +17,13 @@
 
       <label for=""><span>DB:</span></label>
       <select class="form-control" name="db" id="dbs">
-        <option value="">Selecciona una opción</option>
         <% dbs.forEach(db => { %>
         <option value="<%= db.name %>"> <%= db.name %> </option>
         <% }) %>
       </select>
 
-    <div class="hidden">
-      <label for=""><span>DB:</span></label>
-      <select class="form-control" name="db" id="dbs">
-        <option value="">Selecciona una opción</option>
-        <% dbs.forEach(db => { %>
-        <option value="<%= db.name %>"> <%= db.name %> </option>
-        <% }) %>
-      </select>
+    <div class="hidden" id="colecciones">
+      
     </div>
 
 

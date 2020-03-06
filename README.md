@@ -7,7 +7,7 @@ This project is aimed to explore the different databases, collections and docume
 
 This project was created with plain Javascript, Node.js, MongoDb, express, HTML5, bootstrap, ajax (fetch api) and css.
 
-![Functional app with all features](https://i.imgur.com/JkrL5eg.png "Full app")
+![Functional app with all features](https://i.imgur.com/MHAdz0z.png "Full app")
 
 ## How to run the project locally
 ### As a prerequisite you need to have installed mongodb and npm with their respectives enviornment variables

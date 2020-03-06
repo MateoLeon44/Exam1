@@ -1,17 +1,17 @@
 const { MongoClient } = require("mongodb");
 
 function utils() {
-  const url = process.env.MONGODB_URI || "mongodb://localhost:27017";
-
   const mu = {};
 
-  mu.connect = () => {
-    const client = new MongoClient(url, { useUnifiedTopology: true });
+  mu.url = process.env.MONGODB_URI || "mongodb://localhost:27017";
+
+  mu.connect = URI => {
+    const client = new MongoClient(URI, { useUnifiedTopology: true });
     return client.connect();
   };
 
-  mu.getDBs = () => {
-    return mu.connect().then(
+  mu.getDBs = URI => {
+    return mu.connect(URI).then(
       client =>
         client
           .db()
@@ -21,8 +21,8 @@ function utils() {
     );
   };
 
-  mu.getCols = dbName => {
-    return mu.connect().then(client =>
+  mu.getCols = (dbName, URI) => {
+    return mu.connect(URI).then(client =>
       client
         .db(dbName)
         .listCollections()
@@ -30,8 +30,8 @@ function utils() {
     );
   };
 
-  mu.findDocs = (dbName, collection) => {
-    return mu.connect().then(client =>
+  mu.findDocs = (dbName, collection, URI) => {
+    return mu.connect(URI).then(client =>
       client
         .db(dbName)
         .collection(collection)
@@ -41,8 +41,8 @@ function utils() {
     );
   };
 
-  mu.postDocs = (dbName, collection, document) => {
-    return mu.connect().then(client =>
+  mu.postDocs = (dbName, collection, document, URI) => {
+    return mu.connect(URI).then(client =>
       client
         .db(dbName)
         .collection(collection)

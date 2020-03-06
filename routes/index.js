@@ -4,7 +4,7 @@ const router = express.Router();
 const mu = require("../db.js");
 
 router.get("/", function(req, res) {
-  mu.getDBs("mongodb://localhost:27017").then(dbs =>
+  mu.getDBs("mongodb+srv://mateo:leon@cluster0-oop6m.mongodb.net/test?retryWrites=true&w=majority").then(dbs =>
     res.render("index.ejs", { dbs: dbs.databases }),
   );
 });

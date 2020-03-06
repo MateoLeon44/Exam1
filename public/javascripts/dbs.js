@@ -7,6 +7,7 @@ const modal = document.getElementById("modal");
 
 
 window.onload = function() {
+  modal.style.display = "block";
   const dbValue = this.document.getElementById("dbs").value;
   fetch("/getCollections/" + dbValue, {
     method: "POST",
@@ -87,6 +88,10 @@ const mostrarPrimerosDocs = docs => {
   form.innerHTML = formBody;
   modal.style.display = "none";
 };
+
+document.getElementById("aniadirForm").addEventListener("submit", () => {
+  modal.style.display = "block";
+});
 
 db.addEventListener("change", () => {
   modal.style.display = "block";

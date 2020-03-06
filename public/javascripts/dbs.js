@@ -10,7 +10,7 @@ window.onload = function() {
   const dbValue = this.document.getElementById("dbs").value;
   fetch("/getCollections/" + dbValue, {
     method: "POST",
-    body: JSON.stringify({ connection: "mongodb://localhost:27017" }),
+    body: JSON.stringify({ connection: process.env.MONGODB_URI }),
     headers: {
       "Content-Type": "application/json",
     },

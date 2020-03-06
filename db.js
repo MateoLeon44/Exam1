@@ -16,7 +16,10 @@ function utils() {
         client
           .db()
           .admin()
-          .listDatabases(),
+          .listDatabases()
+          .finally(() => {
+            client.close();
+          }),
       // Returns a promise that will resolve to the list of databases
     );
   };
@@ -26,7 +29,8 @@ function utils() {
       client
         .db(dbName)
         .listCollections()
-        .toArray(),
+        .toArray()
+        .finally(() => client.close()),
     );
   };
 
@@ -37,7 +41,8 @@ function utils() {
         .collection(collection)
         .find({})
         .sort({ _id: -1 })
-        .toArray(),
+        .toArray()
+        .finally(() => client.close()),
     );
   };
 
@@ -46,7 +51,8 @@ function utils() {
       client
         .db(dbName)
         .collection(collection)
-        .insertOne(document),
+        .insertOne(document)
+        .finally(() => client.close()),
     );
   };
 

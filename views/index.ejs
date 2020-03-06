@@ -2,38 +2,66 @@
 <html>
 
 <head>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel='stylesheet' href='/stylesheets/style.css' />
 
 </head>
 
 <body>
 
-      <label for=""><span>DB:</span></label>
-      <select class="form-control" name="db" id="dbs">
-        <% dbs.forEach(db => { %>
-        <option value="<%= db.name %>"> <%= db.name %> </option>
-        <% }) %>
-      </select>
+  <div class="container border rounded p-4 mt-5">
+    <label for=""><span>DB:</span></label>
+    <select class="form-control" name="db" id="dbs">
+      <% dbs.forEach(db => { %>
+      <option value="<%= db.name %>"> <%= db.name %> </option>
+      <% }) %>
+    </select>
 
-    <div class="hidden" id="colecciones">
-      
-    </div>
+    <label class="mt-4" for=""><span>Collection:</span></label>
+    <select class="form-control" name="" id="cols">
+
+    </select>
+
+  </div>
+
+  <div class="container border rounded p-4 mt-5">
+    <form action="" method="post" id="aniadirForm">
+
+
+    </form>
+  </div>
+
+
+
+
+  <div class="container mt-5">
+    <table class="table table-striped table-bordered table-responsive block">
+      <thead class="thead-dark">
+        <tr id="headers">
+
+        </tr>
+      </thead>
+      <tbody id="bodies">
+
+      </tbody>
+    </table>
+  </div>
+
+
 
 
 
   <script src="/javascripts/dbs.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

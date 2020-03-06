@@ -1,27 +1,38 @@
 const express = require("express");
 const router = express.Router();
 
-const { init, client } = require("../db.js");
-/* GET home page. */
+const mu = require("../db.js");
+
 router.get("/", function(req, res) {
-  //utils.getDb();
-  client
-    .connect()
-    .then(
-      client =>
-        client
-          .db()
-          .admin()
-          .listDatabases(), // Returns a promise that will resolve to the list of databases
-    )
-    .then(dbs => {
-      res.render("index.ejs", {dbs: dbs.databases});
+  mu.getDBs()
+    .then(dbs => res.render("index.ejs", { dbs: dbs.databases }))
+    .finally(() => {
+      client.close();
+    });
+});
+
+router.get("/getCollections/:db", function(req, res) {
+  const db = req.params.db;
+  mu.getCols(db)
+    .then(cols => {
+      res.json(cols);
     })
     .finally(() => client.close());
 });
 
-router.get("/collections/:id", function(req,res) {
-  const params = req.params
+router.get("/getDocs/:db/:col", (req, res) => {
+  mu.findDocs(req.params.db, req.params.col)
+    .then(docs => {
+      res.json(docs);
+    })
+    .finally(() => client.close());
+});
+
+
+router.post("/postDoc/:db/:col", (req, res) => {
+  mu.postDocs(req.params.db, req.params.col, req.body)
+    .then(() => res.redirect("/"))
+    .finally(() => client.close());
 });
 
 module.exports = router;

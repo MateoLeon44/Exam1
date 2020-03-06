@@ -3,7 +3,7 @@ const { MongoClient } = require("mongodb");
 function utils() {
   const mu = {};
 
-  mu.url = process.env.MONGODB_URI || "mongodb://localhost:27017";
+  mu.url = process.env.MONGODB_URI || "mongodb+srv://mateo:leon@cluster0-oop6m.mongodb.net/test?retryWrites=true&w=majority";
 
   mu.connect = URI => {
     const client = new MongoClient(URI, { useUnifiedTopology: true });
@@ -40,6 +40,7 @@ function utils() {
         .db(dbName)
         .collection(collection)
         .find({})
+        .limit(20)
         .sort({ _id: -1 })
         .toArray()
         .finally(() => client.close()),

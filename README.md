@@ -1,5 +1,5 @@
 # Mongo Explorer
-# JOHN: I CHOOSE THE FIRST OPTION, AND MY CREATIVE COMPONENTS ARE: LOADERS WHILE RETRIEVING DATA VIA FETCH AND GETTING DATA FROM THE FIRST DB/COLLECTION IT FINDS (this means getting the info from the first database, and first collection in the connected database)
+# JOHN: I CHOOSE THE FIRST OPTION, AND MY CREATIVE COMPONENTS ARE: LOADERS WHILE RETRIEVING DATA VIA FETCH AND GETTING DATA FROM THE FIRST DB/COLLECTION IT FINDS (this means getting the documents from the first database and collection it finds, listing them in a table)
 
 https://mongoexplorer.herokuapp.com/
 

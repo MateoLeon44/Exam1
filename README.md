@@ -40,7 +40,8 @@ mongod --dbpath C:\data  (or your path where data is located, if you don't have 
 ```
 nodemon (you can also run it with npm start)
 ```
-8. Change the path of 'Conexión' to mongodb://localhost:27017 and click in 'Conectarse' (If you are running it locally, if you are in the heroku app just enter the url of an external db)
+8. Open your web browser in localhost:3000
+9. Change the path of 'Conexión' to mongodb://localhost:27017 and click in 'Conectarse' (If you are running it locally, if you are in the heroku app just enter the url of an external db)
 # How the project works
 
 * The project runs in a MongoDB atlas database, so it will search for current dbs, collections and documents in the sample data created
